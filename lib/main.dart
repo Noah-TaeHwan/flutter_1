@@ -121,6 +121,7 @@ class App extends StatelessWidget {
                 height: 16,
               ),
               Container(
+                clipBehavior: Clip.hardEdge,
                 decoration: const BoxDecoration(
                     color: Color(0xff1f2123),
                     borderRadius: BorderRadius.all(Radius.circular(24))),
@@ -128,6 +129,7 @@ class App extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 24, horizontal: 32),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +148,7 @@ class App extends StatelessWidget {
                                 "6 428",
                                 style: TextStyle(
                                   color: Color(0xffffffff),
-                                  fontSize: 16,
+                                  fontSize: 18,
                                 ),
                               ),
                               const SizedBox(
@@ -156,12 +158,23 @@ class App extends StatelessWidget {
                                 "EUR",
                                 style: TextStyle(
                                   color: Colors.white.withOpacity(0.8),
-                                  fontSize: 16,
+                                  fontSize: 18,
                                 ),
                               ),
                             ],
                           ),
                         ],
+                      ),
+                      Transform.scale(
+                        scale: 2.5,
+                        child: Transform.translate(
+                          offset: const Offset(-8, 10),
+                          child: Icon(
+                            Icons.euro_rounded,
+                            color: Colors.white.withOpacity(0.1),
+                            size: 80,
+                          ),
+                        ),
                       ),
                     ],
                   ),
